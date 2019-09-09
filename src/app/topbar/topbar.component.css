@@ -14,3 +14,9 @@ a {
   justify-content: space-between;
   align-items: center;
 }
+
+#bar #back {
+  text-decoration: none;
+  outline: 0;
+  font-size: 2em;
+}

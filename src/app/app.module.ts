@@ -12,8 +12,6 @@ import { HomeComponent } from './home/home.component';
 import { DashComponent } from './dash/dash.component';
 
 
-
-
 const appRoutes = [
   { path: ''          , component: HomeComponent },
   { path: 'dashboard' , component: DashComponent},
