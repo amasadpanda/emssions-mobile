@@ -1,0 +1,47 @@
+p {
+  font-family: Lato;
+}
+
+#homeLinks {
+  margin-top: 20vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#homeLinks a{
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 8px;
+
+  font-family: "Arial";
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #5ab1bb;
+  outline: none;
+
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  transition: .2s color linear;
+}
+
+#homeLinks a:hover {
+  color: #f7dd72;
+}
+
+#homeLinks img {
+
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  margin-top: 50px;
+
+  width: 30%;
+  height: 30%;
+
+  max-height: 130px;
+  max-width: 130px;
+}

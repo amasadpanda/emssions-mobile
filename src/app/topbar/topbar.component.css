@@ -1,0 +1,16 @@
+a {
+  font-weight: 400;
+  text-decoration: none;
+  color: inherit;
+}
+
+#bar {
+  width: 100%;
+  height: 40px;
+  color: #f7dd72;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
