@@ -10,13 +10,14 @@ import { RouterModule, Routes} from '@angular/router';
 import { TopbarComponent } from './topbar/topbar.component';
 import { HomeComponent } from './home/home.component';
 import { DashComponent } from './dash/dash.component';
+import { HistoryComponent } from './history/history.component';
 
 
 const appRoutes = [
   { path: ''          , component: HomeComponent },
   { path: 'dashboard' , component: DashComponent},
   { path: 'statistics', component: StatsComponent},
-  { path: 'history'   , component: StatsComponent},
+  { path: 'history'   , component: HistoryComponent},
   { path: 'tools'     , component: StatsComponent},
   { path: 'settings'  , component: StatsComponent},
   { path: 'help'      , component: StatsComponent}
@@ -26,7 +27,7 @@ const appRoutes = [
   imports:      [ BrowserModule, FormsModule,
     RouterModule.forRoot(appRoutes, {enableTracing: true})
   ],
-  declarations: [ AppComponent, HelloComponent, StatsComponent, TopbarComponent, HomeComponent, DashComponent ],
+  declarations: [ AppComponent, HelloComponent, StatsComponent, TopbarComponent, HomeComponent, DashComponent, HistoryComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

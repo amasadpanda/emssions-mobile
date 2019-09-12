@@ -1,0 +1,21 @@
+#tableContainer {
+  overflow: auto;
+  width: 95%;
+  height: 50vh;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+table, th, td {
+  color: #a5c882;
+  border: 1px solid #4e6766;
+  border-collapse: collapse;
+  text-align: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+td {
+  padding: 10px 10px;
+
+}

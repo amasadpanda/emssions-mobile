@@ -5,3 +5,40 @@
   right: 0;
   margin: auto;
 }
+
+#chartBar {
+  left: 0;
+  right: 0;
+  margin: auto;
+  border: 2px solid back;
+  display: flex;
+  justify-content: center;
+}
+
+#gauges {
+  width: 50%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label {
+  padding: 6px;
+  color: white;
+  margin: 0px 4px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+input[type="radio"]:checked+label {
+  background-color: #a5c882;
+  border: 6px solid #a5c882;
+  border-radius: 6px;
+  padding: 0;
+  color: #25283d;
+}
+
+
