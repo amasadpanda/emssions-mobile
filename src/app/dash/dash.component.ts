@@ -52,7 +52,7 @@ export class DashComponent implements OnInit {
         width: this.width/2,
         type: 'radialBar',
         toolbar: {
-          show: fal
+          show: false
         }
       },
       plotOptions: {

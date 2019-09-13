@@ -1,0 +1,17 @@
+#allowance {
+  font-size: 1.8em;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  color: #5ab1bb;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
+#allowance label {
+  font-family:'Courier New', Courier, monospace;
+  font-weight: 600;
+  color: #2fb141;
+  font-size: .6em;
+}
