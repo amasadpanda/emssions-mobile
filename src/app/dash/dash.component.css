@@ -1,6 +1,6 @@
 #chart {
   width: 90%;
-  height: 40vh;
+  height: 45vh;
 
   left: 0;
   right: 0;
@@ -14,7 +14,7 @@
   margin: auto;
   display: flex;
   justify-content: center;
-  font-size: 5vw;
+  font-size: 3vh;
   margin-bottom: 5vh;
 
 }

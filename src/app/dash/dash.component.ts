@@ -318,15 +318,14 @@ export class DashComponent implements OnInit {
           }
       },
       series: [{
-        name: 'sales',
+        name: 'CO2',
         data: this.Data,
       }],
       stroke: {
         show: true,
-        curve: 'smooth',
         lineCap: 'butt',
         colors: undefined,
-        width: this.width/70,
+        width: this.width/200,
         dashArray: 0,      
       },
       tooltip: {
@@ -340,8 +339,8 @@ export class DashComponent implements OnInit {
           },
           x: {
               show: true,
-              format: 'dd MMM',
-              formatter: undefined,
+              formatter: (e) => (new Date(e)).toISOString(),
+              format: 'dd MMM yyyy hh',
           },
           y: {
               formatter: undefined,
@@ -362,20 +361,23 @@ export class DashComponent implements OnInit {
               offsetX: 0,
               offsetY: 0,
           },
-      }
+      },
+      xaxis: {
+        type: 'datetime',
+      },
 
     }
     var chart = new ApexCharts(document.querySelector("#chart"), options);
     chart.render();
 
-    var last = this.Data[-1];
+    var lastDate = (this.Data[this.Data.length - 1][0]);
 
 
     document.querySelector("#hour").addEventListener('click', function (e) {
       chart.updateOptions({
         xaxis: {
-          min: last - 1,
-          max: last,
+          min: lastDate - (3600 * 1000),
+          max: lastDate,
         }
       })
     })
@@ -383,8 +385,8 @@ export class DashComponent implements OnInit {
     document.querySelector("#day").addEventListener('click', function (e) {
       chart.updateOptions({
         xaxis: {
-          min: last - 2,
-          max: last,
+          min: lastDate - (3600 * 1000 * 24),
+          max: lastDate,
         }
       })
     })
@@ -392,8 +394,8 @@ export class DashComponent implements OnInit {
     document.querySelector("#month").addEventListener('click', function (e) {
       chart.updateOptions({
         xaxis: {
-          min: new Date('27 Feb 2012').getTime(),
-          max: last,
+          min: lastDate - (3600 * 1000 * 24 * 31),
+          max: lastDate,
         }
       })
     })
@@ -401,13 +403,12 @@ export class DashComponent implements OnInit {
     document.querySelector("#year").addEventListener('click', function (e) {
       chart.updateOptions({
         xaxis: {
-          min: new Date('01 Jan 2013').getTime(),
-          max: last,
+          min: lastDate  - (3600 * 1000 * 24 * 365),
+          max: lastDate,
         }
       })
     })
 
-/*
     document.querySelector("#all").addEventListener('click', function (e) {
       chart.updateOptions({
         xaxis: {
@@ -418,8 +419,13 @@ export class DashComponent implements OnInit {
     })
 
     document.querySelector("#ytd").addEventListener('click', function () {
-
-    })*/
+       chart.updateOptions({
+        xaxis: {
+          min: new Date(new Date().getFullYear(), 0, 1),
+          max: lastDate,
+        }
+      })
+    })
 
   }
 
