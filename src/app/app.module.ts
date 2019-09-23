@@ -16,6 +16,7 @@ import { ToolsComponent } from './tools/tools.component';
 
 const appRoutes = [
   { path: ''          , component: HomeComponent },
+  { path: 'menu'      , component: HomeComponent },
   { path: 'dashboard' , component: DashComponent},
   { path: 'statistics', component: StatsComponent},
   { path: 'history'   , component: HistoryComponent},
