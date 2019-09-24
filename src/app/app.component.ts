@@ -8,4 +8,10 @@ import { Component } from '@angular/core';
 
 export class AppComponent  {
 
+   ngOnInit() {
+      var imported = document.createElement('script');
+      imported.src = 'https://cdn.jsdelivr.net/npm/apexcharts';
+      document.head.appendChild(imported);
+   }
+
 }
