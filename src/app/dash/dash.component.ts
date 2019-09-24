@@ -484,19 +484,19 @@ export class DashComponent implements OnInit {
           dataLabels: {
             showOn: 'always',
             name: {
-              offsetY: '-25vh',
+              offsetY: '-10vh',
               show: true,
               color: '#888',
-              fontSize: '4vw'
+              fontSize: '3vw'
             },
             value: {
               formatter: function(val) {
                 return parseInt(val);
               },
               color: '#fff',
-              fontSize: '10vw',
+              fontSize: '7vw',
               show: true,
-              offsetY: '25vh',
+              offsetY: '10vh',
             }
           }
         }
