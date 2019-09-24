@@ -1,3 +1,8 @@
+#container {
+  display: flex;
+  flex-direction: column;
+}
+
 #chart {
   width: 90%;
   height: 45vh;
@@ -16,14 +21,32 @@
   justify-content: center;
   font-size: 3vh;
   margin-bottom: 5vh;
+  user-select: none;
 
 }
 
 #gauges {
   left: 0;
-  right: 0;
-  margin: auto;
-  width: 50%;
+  width: 40%;
+}
+
+#bottomSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#stats {
+  width: 45%;
+  height: 40vh;
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+}
+
+#stats span {
+  font-size: 6vh;
+  color: #5ab1bb;
 }
 
 input[type="radio"] {
@@ -44,5 +67,3 @@ input[type="radio"]:checked+label {
   padding: 0;
   color: #25283d;
 }
-
-

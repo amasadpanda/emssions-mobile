@@ -13,6 +13,8 @@ export class DashComponent implements OnInit {
   height;
   Data;
 
+  values = [10, 21, 32, 43, 54];
+
   constructor() { }
 
   ngOnInit() {
@@ -373,10 +375,10 @@ export class DashComponent implements OnInit {
     var lastDate = (this.Data[this.Data.length - 1][0]);
 
 
-    document.querySelector("#hour").addEventListener('click', function (e) {
+    document.querySelector("#week").addEventListener('click', function (e) {
       chart.updateOptions({
         xaxis: {
-          min: lastDate - (3600 * 1000),
+          min: lastDate - (3600 * 1000 * 24 * 7),
           max: lastDate,
         }
       })
@@ -395,6 +397,15 @@ export class DashComponent implements OnInit {
       chart.updateOptions({
         xaxis: {
           min: lastDate - (3600 * 1000 * 24 * 31),
+          max: lastDate,
+        }
+      })
+    })
+
+     document.querySelector("#month6").addEventListener('click', function (e) {
+      chart.updateOptions({
+        xaxis: {
+          min: lastDate - (3600 * 1000 * 24 * 31 * 6),
           max: lastDate,
         }
       })
@@ -432,7 +443,6 @@ export class DashComponent implements OnInit {
   gauges() {
     var options = {
       chart: {
-        width: this.width/2,
         type: 'radialBar',
         toolbar: {
           show: false

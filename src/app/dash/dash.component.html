@@ -1,24 +1,39 @@
 <app-topbar></app-topbar>
 
-<div id='chart'>
+<div id='container'>
 
-</div>
 
-<div id='chartBar'>
-  <input type='radio' id='all' name='dateRange' checked>
-  <label for="all">All</label>
-  <input type='radio' id='ytd' name='dateRange'>
-  <label for="ytd">YTD</label>
-  <input type='radio' id='hour' name='dateRange'>
-  <label for="hour">1H</label>
-  <input type='radio' id='day' name='dateRange' >
-  <label for="day">1D</label>
-  <input type='radio' id='month' name='dateRange' > 
-  <label for="month">1M</label>  
-  <input type='radio' id='year' name='dateRange' > 
-  <label for="year">1Y</label>
+    <div id='chart'>
+    </div>
 
-</div>
+    <div id='chartBar'>
+      <input type='radio' id='all' name='dateRange' checked>
+      <label for="all">All</label>
+      <input type='radio' id='ytd' name='dateRange'>
+      <label for="ytd">YTD</label>
+      <input type='radio' id='day' name='dateRange' >
+      <label for="day">1D</label>
+      <input type='radio' id='week' name='dateRange'>
+      <label for="week">1W</label>
+      <input type='radio' id='month' name='dateRange' > 
+      <label for="month">1M</label>  
+      <input type='radio' id='month6' name='dateRange' > 
+      <label for="month6">6M</label>  
+      <input type='radio' id='year' name='dateRange' > 
+      <label for="year">1Y</label>
+    </div>
 
-<div id='gauges'>
+    <div id='bottomSection'>
+      <div id='gauges'>
+      </div>
+
+      <div id='stats'>
+        <span>{{this.values[0]}}</span>
+        <span>{{this.values[1]}}</span>
+        <span>{{this.values[2]}}</span>
+        <span>{{this.values[3]}}</span>
+        <span>{{this.values[4]}}</span>
+      </div>
+    </div>
+
 </div>
