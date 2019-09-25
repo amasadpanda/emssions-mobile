@@ -13,6 +13,8 @@ import { DashComponent } from './dash/dash.component';
 import { HistoryComponent } from './history/history.component';
 import { ToolsComponent } from './tools/tools.component';
 
+import {FlexLayoutModule } from '@angular/flex-layout';
+
 
 const appRoutes = [
   { path: ''          , component: HomeComponent },
@@ -27,7 +29,8 @@ const appRoutes = [
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule,
-    RouterModule.forRoot(appRoutes, {enableTracing: true})
+    RouterModule.forRoot(appRoutes, {enableTracing: true}),
+     FlexLayoutModule,
   ],
   declarations: [ AppComponent, HelloComponent, StatsComponent, TopbarComponent, HomeComponent, DashComponent, HistoryComponent, ToolsComponent ],
   bootstrap:    [ AppComponent ]
