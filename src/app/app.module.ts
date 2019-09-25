@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
+import { AgGridModule } from 'ag-grid-angular';
+
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { StatsComponent } from './stats/stats.component';
@@ -27,7 +29,8 @@ const appRoutes = [
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule,
-    RouterModule.forRoot(appRoutes, {enableTracing: true})
+    RouterModule.forRoot(appRoutes, {enableTracing: true}),
+    AgGridModule.withComponents([]),
   ],
   declarations: [ AppComponent, HelloComponent, StatsComponent, TopbarComponent, HomeComponent, DashComponent, HistoryComponent, ToolsComponent ],
   bootstrap:    [ AppComponent ]
