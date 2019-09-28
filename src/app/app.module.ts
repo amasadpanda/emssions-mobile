@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { DashComponent } from './dash/dash.component';
 import { HistoryComponent } from './history/history.component';
 import { ToolsComponent } from './tools/tools.component';
+import { DataFetcherService } from './data-fetcher.service';
 
 
 const appRoutes = [
@@ -33,6 +34,7 @@ const appRoutes = [
     AgGridModule.withComponents([]),
   ],
   declarations: [ AppComponent, HelloComponent, StatsComponent, TopbarComponent, HomeComponent, DashComponent, HistoryComponent, ToolsComponent ],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
+  providers: [DataFetcherService]
 })
 export class AppModule { }
