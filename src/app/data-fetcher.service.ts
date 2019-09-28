@@ -14,6 +14,10 @@ export class DataFetcherService {
     return of([this.sec, 40])
   }
 
+  getStats() {
+    return of([Math.random()*100, Math.random()*100, Math.random()*100, Math.random()*100, Math.random()*100]);
+  }
+
   getData() {
     var data = [
             [1327359600000,30.95],

@@ -15,31 +15,36 @@ export class DashComponent implements OnInit {
   height;
   Data;
   Chart;
+  Stats;
 
-  values = [10, 21, 32, 43, 54];
+  constructor(private dataSource: DataFetcherService) {
+    this.initData();
 
-  constructor(private dataSource: DataFetcherService) { }
+  }
 
   initData() {
     this.dataSource.getData()
         .subscribe(data => {
           this.Data = data;
-          interval(1000 * 1).subscribe(x => {
+         /* interval(1000 * 1).subscribe(x => {
             this.dataSource.getNextSecond()
               .subscribe(data => {
-                this.Data.push(data);
+                //this.Data.push(data);
                 this.Chart.updateSeries([{
                     data: this.Data
                 }])
               })
-          });
+          }); */
         });
+
+    interval(1000 * 1).subscribe( x => {
+      this.dataSource.getStats()
+              .subscribe(stats => this.Stats = stats);
+    });
+    
   }
 
   ngOnInit() {
-
-    this.initData();
-
     this.width = window.innerWidth
       || document.documentElement.clientWidth
       || document.body.clientWidth;
@@ -48,7 +53,6 @@ export class DashComponent implements OnInit {
       || document.documentElement.clientHeight
       || document.body.clientHeight;
 
-   
     this.line();
     this.gauges();
   }
@@ -119,13 +123,13 @@ export class DashComponent implements OnInit {
       },
 
     }
-    this.Chart = new ApexCharts(document.querySelector("#chart"), options);
-    this.Chart.render();
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+    chart.render();
 
     var lastDate = (this.Data[this.Data.length - 1][0]);
 
     document.querySelector("#week").addEventListener('click', function (e) {
-      this.Chart.updateOptions({
+      chart.updateOptions({
         xaxis: {
           min: lastDate - (3600 * 1000 * 24 * 7),
           max: lastDate,
@@ -134,7 +138,7 @@ export class DashComponent implements OnInit {
     })
 
     document.querySelector("#day").addEventListener('click', function (e) {
-      this.Chart.updateOptions({
+      chart.updateOptions({
         xaxis: {
           min: lastDate - (3600 * 1000 * 24),
           max: lastDate,
@@ -143,7 +147,7 @@ export class DashComponent implements OnInit {
     })
 
     document.querySelector("#month").addEventListener('click', function (e) {
-      this.Chart.updateOptions({
+      chart.updateOptions({
         xaxis: {
           min: lastDate - (3600 * 1000 * 24 * 31),
           max: lastDate,
@@ -152,7 +156,7 @@ export class DashComponent implements OnInit {
     })
 
      document.querySelector("#month6").addEventListener('click', function (e) {
-      this.Chart.updateOptions({
+      chart.updateOptions({
         xaxis: {
           min: lastDate - (3600 * 1000 * 24 * 31 * 6),
           max: lastDate,
@@ -161,7 +165,7 @@ export class DashComponent implements OnInit {
     })
 
     document.querySelector("#year").addEventListener('click', function (e) {
-      this.Chart.updateOptions({
+      chart.updateOptions({
         xaxis: {
           min: lastDate  - (3600 * 1000 * 24 * 365),
           max: lastDate,
@@ -170,7 +174,7 @@ export class DashComponent implements OnInit {
     })
 
     document.querySelector("#all").addEventListener('click', function (e) {
-      this.Chart.updateOptions({
+      chart.updateOptions({
         xaxis: {
           min: undefined,
           max: undefined,
@@ -179,7 +183,7 @@ export class DashComponent implements OnInit {
     })
 
     document.querySelector("#ytd").addEventListener('click', function () {
-       this.Chart.updateOptions({
+       chart.updateOptions({
         xaxis: {
           min: new Date(new Date().getFullYear(), 0, 1),
           max: lastDate,
