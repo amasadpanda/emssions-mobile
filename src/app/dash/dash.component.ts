@@ -14,27 +14,17 @@ export class DashComponent implements OnInit {
   width;
   height;
   Data;
-  Chart;
-  Stats;
+  Stats : number[] = [0,0,0,0,0];
 
   constructor(private dataSource: DataFetcherService) {
     this.initData();
 
   }
 
-  initData() {
+  initData(){
     this.dataSource.getData()
         .subscribe(data => {
           this.Data = data;
-         /* interval(1000 * 1).subscribe(x => {
-            this.dataSource.getNextSecond()
-              .subscribe(data => {
-                //this.Data.push(data);
-                this.Chart.updateSeries([{
-                    data: this.Data
-                }])
-              })
-          }); */
         });
 
     interval(1000 * 1).subscribe( x => {
@@ -190,6 +180,14 @@ export class DashComponent implements OnInit {
         }
       })
     })
+
+    /*interval(1000 * 60).subscribe( x => {
+        this.dataSource.getNextSecond()
+              .subscribe(data => this.Data.push(data));
+        chart.updateSeries([{
+            data: this.Data
+        }]);
+    });*/
 
   }
 

@@ -10,12 +10,16 @@ export class DataFetcherService {
 
   sec = 1361919600000;
   getNextSecond() {
-    this.sec += 100000;
-    return of([this.sec, 40])
+    this.sec += 8.64e7;
+    return of([this.sec, 40.1])
   }
 
-  getStats() {
+  getStats() : Observable<number[]> {
     return of([Math.random()*100, Math.random()*100, Math.random()*100, Math.random()*100, Math.random()*100]);
+  }
+
+  getHistory() {
+    
   }
 
   getData() {
