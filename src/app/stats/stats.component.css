@@ -2,6 +2,16 @@ body {
   background-color: white;
 }
 
+#container {
+  display: flex;
+  flex-direction: column;
+}
+
 #chart {
-  height: 50vh;
+  width: 90%;
+  height: 45vh;
+
+  left: 0;
+  right: 0;
+  margin: auto;
 }

@@ -54,7 +54,7 @@ export class DashComponent implements OnInit {
           'line',
           sparkline: {
             enabled: true,
-          }
+          },
       },
        animations: {
             enabled: true,

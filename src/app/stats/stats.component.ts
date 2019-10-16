@@ -12,7 +12,18 @@ export class StatsComponent implements OnInit {
 
   constructor() { }
 
+  width; height;
+
   ngOnInit() {
+
+    this.width = window.innerWidth
+      || document.documentElement.clientWidth
+      || document.body.clientWidth;
+
+    this.height = window.innerHeight
+      || document.documentElement.clientHeight
+      || document.body.clientHeight;
+
     this.scatter();
   }
 
@@ -20,7 +31,7 @@ export class StatsComponent implements OnInit {
 
     var options = {
       chart: {
-        height: 350,
+        height: this.height*3/4,
         type: 'scatter',
         zoom: {
           type: 'xy'
@@ -63,6 +74,7 @@ export class StatsComponent implements OnInit {
         labels: {
           style: {
             colors: 'white',
+            fontSize: '2vw',
           },
         }
       },
@@ -71,6 +83,7 @@ export class StatsComponent implements OnInit {
         labels: {
           style: {
             color: 'white',
+            fontSize: '2vh',
           }
         }
       },
@@ -78,7 +91,7 @@ export class StatsComponent implements OnInit {
         type:'solid',
       },
       markers: {
-        size: [5, 3],
+        size: [(this.height+ this.width)/200, (this.height + this.width)/250],
         colors: 'red',
         strokeWidth: 0,
         strokeOpacity: 0.0,
@@ -91,7 +104,41 @@ export class StatsComponent implements OnInit {
           size: undefined,
           sizeOffset: 3
         }
-      }
+      }, 
+      tooltip: {
+          enabled: true,
+          style: {
+            fontSize: '6vw',
+            fontFamily: undefined
+          },
+          onDatasetHover: {
+              highlightDataSeries: false,
+          },
+          x: {
+              show: true,
+              formatter: (e) => (new Date(e)).toISOString(),
+              format: 'dd MMM yyyy hh',
+          },
+          y: {
+              formatter: undefined,
+              title: {
+                  formatter: (seriesName) => seriesName,
+              },
+          },
+          z: {
+              formatter: undefined,
+              title: 'Size: '
+          },
+          marker: {
+              show: true,
+          },
+          fixed: {
+              enabled: false,
+              position: 'topRight',
+              offsetX: 0,
+              offsetY: 0,
+          },
+      },
     }
 
     var chart = new ApexCharts(
