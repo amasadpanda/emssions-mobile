@@ -26,12 +26,13 @@ export class StatsComponent implements OnInit {
           type: 'xy'
         }
       },
+      colors: ['#de3c4b', '#abe188'],
       series: [{
           name: 'Above',
           data: generateDayWiseTimeSeries(new Date('11 Feb 2017 GMT').getTime(), 20, {
             min: 10,
             max: 60
-          })
+          }),
         },
         {
           name: 'Below',
@@ -73,18 +74,17 @@ export class StatsComponent implements OnInit {
           }
         }
       },
+      fill: {
+        type:'solid',
+      },
       markers: {
-        size: [3, 5],
-        colors: ['red', 'white'],
-        strokeColors: '',
+        size: [5, 3],
+        colors: 'red',
         strokeWidth: 0,
-        strokeOpacity: 0.9,
+        strokeOpacity: 0.0,
         fillOpacity: 1,
-        discrete: [],
         shape: "circle",
-        radius: 2,
-        offsetX: 0,
-        offsetY: 0,
+        radius: 5,
         onClick: undefined,
         onDblClick: undefined,
         hover: {
