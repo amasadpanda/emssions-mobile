@@ -35,7 +35,7 @@ export class StatsComponent implements OnInit {
         type: 'scatter',
         zoom: {
           type: 'xy'
-        }
+        }, 
       },
       colors: ['#de3c4b', '#abe188'],
       series: [{
@@ -115,11 +115,12 @@ export class StatsComponent implements OnInit {
               highlightDataSeries: false,
           },
           x: {
-              show: true,
+              show: false,
               formatter: (e) => (new Date(e)).toISOString(),
               format: 'dd MMM yyyy hh',
           },
           y: {
+              show: true,
               formatter: undefined,
               title: {
                   formatter: (seriesName) => seriesName,
@@ -139,6 +140,12 @@ export class StatsComponent implements OnInit {
               offsetY: 0,
           },
       },
+      legend: {
+        fontSize: '55vw',
+        labels: {
+          colors: 'white',
+        }, 
+      }
     }
 
     var chart = new ApexCharts(
