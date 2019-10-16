@@ -5,7 +5,7 @@ a {
 }
 
 #bar {
-  width: 90%;
+  width: 30%;
   height: 5vh;
   color: #f7dd72;
   margin: 16px;
@@ -14,7 +14,6 @@ a {
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  bottom: 10px;
   z-index: 9999;
 }
 
