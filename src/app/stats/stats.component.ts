@@ -59,7 +59,7 @@ export class StatsComponent implements OnInit {
         ]
       },
       chart: {
-        height: this.height*.9,
+        height: this.height*.95,
         type: 'scatter',
         zoom: {
           enabled: false,
