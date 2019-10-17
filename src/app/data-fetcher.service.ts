@@ -50,7 +50,7 @@ export class DataFetcherService {
       below: [],
     }
 
-    let unfiltered = this.generateDayWiseTimeSeries(new Date('11 Feb 2017 GMT').getTime(), 50, {
+    let unfiltered = this.generateDayWiseTimeSeries(new Date('11 Feb 2017 GMT').getTime(), 100, {
             min: 10,
             max: 60
     });
@@ -64,7 +64,7 @@ export class DataFetcherService {
         data.below.push(unfiltered[i]);
       }
     }
-    
+
     return of(data);
   }
 

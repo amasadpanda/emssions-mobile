@@ -17,7 +17,6 @@ export class StatsComponent implements OnInit {
     this.dataSource.getGCV(20)
     .subscribe(data => {
       this.Data = data;
-      this.scatter();
     });
   }
 
@@ -32,10 +31,12 @@ export class StatsComponent implements OnInit {
     this.height = window.innerHeight
       || document.documentElement.clientHeight
       || document.body.clientHeight;
+
+    this.scatter();
   }
 
   scatter() {
-    console.log(this.Data.above)
+    console.log(this.Data.above);
     var options = {
       annotations: {
         yaxis: [
@@ -170,7 +171,7 @@ export class StatsComponent implements OnInit {
           },
       },
       legend: {
-        fontSize: this.width/80,
+        fontSize: this.height/40,
         labels: {
           colors: 'white',
         }, 
