@@ -22,6 +22,52 @@ export class DataFetcherService {
     
   }
 
+    /*
+  // this function will generate output in this format
+  // data = [
+      [timestamp, 23],
+      [timestamp, 33],
+      [timestamp, 12]
+      ...
+  ]
+  */
+  generateDayWiseTimeSeries(baseval, count, yrange) {
+    var i = 0;
+    var series = [];
+    while (i < count) {
+      var y = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
+
+      series.push([baseval, y]);
+      baseval += 86400000;
+      i++;
+    }
+    return series;
+  }
+
+  getGCV(limit: Number) {
+    let data = {
+      above: [],
+      below: [],
+    }
+
+    let unfiltered = this.generateDayWiseTimeSeries(new Date('11 Feb 2017 GMT').getTime(), 50, {
+            min: 10,
+            max: 60
+    });
+
+    for(let i = 0; i < unfiltered.length; i++)
+    {
+      if(unfiltered[i][1] > limit)
+      {
+        data.above.push(unfiltered[i]);
+      } else {
+        data.below.push(unfiltered[i]);
+      }
+    }
+    
+    return of(data);
+  }
+
   getData() {
     var data = [
             [1327359600000,30.95],

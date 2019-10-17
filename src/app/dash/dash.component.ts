@@ -18,7 +18,6 @@ export class DashComponent implements OnInit {
 
   constructor(private dataSource: DataFetcherService) {
     this.initData();
-
   }
 
   initData(){
