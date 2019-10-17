@@ -30,6 +30,26 @@ export class StatsComponent implements OnInit {
   scatter() {
 
     var options = {
+      annotations: {
+        yaxis: [
+          {
+            // in a datetime series, the x value should be a timestamp, just like it is generated below
+            y: 20,
+            size: 10,
+            strokeDashArray: 1,
+            borderColor: "#775DD0",
+            label: {
+              borderColor: "#775DD0",
+              style: {
+                color: "#fff",
+                background: "#775DD0",
+                fontSize: '3vw',
+              },
+              text: "Limit"
+            }
+          },
+        ]
+      },
       chart: {
         height: this.height*.9,
         type: 'scatter',
@@ -38,9 +58,11 @@ export class StatsComponent implements OnInit {
           type: ''
         }, 
       },
-      colors: ['#de3c4b', '#abe188'],
-      series: [{
+      colors: ['#de3c4b', '#abe188', '#fff'],
+      series: [
+        {
           name: 'Above',
+          type: 'scatter',
           data: generateDayWiseTimeSeries(new Date('11 Feb 2017 GMT').getTime(), 20, {
             min: 10,
             max: 60
@@ -48,6 +70,7 @@ export class StatsComponent implements OnInit {
         },
         {
           name: 'Below',
+          type: 'scatter',
           data: generateDayWiseTimeSeries(new Date('11 Feb 2017 GMT').getTime(), 20, {
             min: 10,
             max: 60
@@ -68,7 +91,6 @@ export class StatsComponent implements OnInit {
             show: false
           }
         },
-        
       },
       xaxis: {
         type: 'datetime',
@@ -95,7 +117,7 @@ export class StatsComponent implements OnInit {
         type:'solid',
       },
       markers: {
-        size: [(this.height+ this.width)/200, (this.height + this.width)/250],
+        size: [(this.height+ this.width)/200, (this.height + this.width)/250, 0],
         colors: 'red',
         strokeWidth: 0,
         strokeOpacity: 0.0,
@@ -132,6 +154,7 @@ export class StatsComponent implements OnInit {
               },
           },
           z: {
+            show: true,
               formatter: undefined,
               title: 'Size: '
           },
@@ -146,7 +169,7 @@ export class StatsComponent implements OnInit {
           },
       },
       legend: {
-        fontSize: '20vw',
+        fontSize: this.width/80,
         labels: {
           colors: 'white',
         }, 
