@@ -31,10 +31,11 @@ export class StatsComponent implements OnInit {
 
     var options = {
       chart: {
-        height: this.height*3/4,
+        height: this.height*.9,
         type: 'scatter',
         zoom: {
-          type: 'xy'
+          enabled: false,
+          type: ''
         }, 
       },
       colors: ['#de3c4b', '#abe188'],
@@ -76,6 +77,9 @@ export class StatsComponent implements OnInit {
             colors: 'white',
             fontSize: '2vw',
           },
+        },
+        tooltip: {
+          enabled: false,
         }
       },
       yaxis: {
@@ -115,9 +119,10 @@ export class StatsComponent implements OnInit {
               highlightDataSeries: false,
           },
           x: {
-              show: false,
-              formatter: (e) => (new Date(e)).toISOString(),
-              format: 'dd MMM yyyy hh',
+              show: true,
+              //formatter: (e) => (new Date(e)).toISOString(),
+              //formatter: (e => "hello"),
+              format: 'dd-MMM-yyyy hh:mm',
           },
           y: {
               show: true,
@@ -141,7 +146,7 @@ export class StatsComponent implements OnInit {
           },
       },
       legend: {
-        fontSize: '55vw',
+        fontSize: '20vw',
         labels: {
           colors: 'white',
         }, 
