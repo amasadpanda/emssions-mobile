@@ -85,8 +85,8 @@ export class DashComponent implements OnInit {
           },
           x: {
               show: true,
-              formatter: (e) => (new Date(e)).toISOString(),
-              format: 'dd MMM yyyy hh',
+              //formatter: (e) => (new Date(e)).toISOString(),
+              format: 'dd-MMM-yyyy hh:mm',
           },
           y: {
               formatter: undefined,
@@ -175,7 +175,7 @@ export class DashComponent implements OnInit {
     document.querySelector("#ytd").addEventListener('click', function () {
        chart.updateOptions({
         xaxis: {
-          min: new Date(new Date().getFullYear(), 0, 1),
+          min: new Date(new Date(lastDate).getFullYear(), 0, 1),
           max: lastDate,
         }
       })

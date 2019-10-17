@@ -1,7 +1,7 @@
 #tableContainer {
   overflow: auto;
   width: 95%;
-  height: 50vh;
+  height: 00vh;
   left: 0;
   right: 0;
   margin: auto;
@@ -10,6 +10,10 @@
 .ag-theme-balham-dark {
   margin: 0;
   padding: 0;
+}
+
+.grid-align {
+    text-align: center;
 }
 
 table, th, td {
