@@ -53,7 +53,7 @@ export class HistoryComponent implements OnInit {
   getRowHeight() : Number {
       return (window.innerHeight
       || document.documentElement.clientHeight
-      || document.body.clientHeight)/18;
+      || document.body.clientHeight)/25;
   }
 
 
