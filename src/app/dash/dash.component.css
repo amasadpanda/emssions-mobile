@@ -53,16 +53,26 @@
 }
 
 #stats {
-  width: 45%;
+  width: 90%;
   height: 40vh;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 
 #stats span {
   font-size: 6vh;
   color: #5ab1bb;
+  width: 45vw;
+  border: 2px solid red;
+}
+
+#stats div {
+  font-size: 2vh;
+  color: #5ab1bb;
+  width: 45vw;
+  border: 2px solid red;
 }
 
 input[type="radio"] {
