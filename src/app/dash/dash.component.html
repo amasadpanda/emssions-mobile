@@ -3,8 +3,13 @@
 <div id='container'>
 
 
+  <div id='chartSection'>
     <div id='chart'>
     </div>
+
+    <div id='gauges'>
+    </div>
+  </div>
 
     <div id='chartBar'>
       <input type='radio' id='all' name='dateRange' checked>
@@ -23,10 +28,14 @@
       <label for="year">1Y</label>
     </div>
 
-    <div id='bottomSection'>
-      <div id='gauges'>
+      <div id='carasol'>
+        <input type='radio' id='simple' name='carasol' checked (click)="showStat()">
+        <label for="simple">Graph</label>
+        <input type='radio' id='gauge' name='carasol' (click)="showGauge()">
+        <label for="gauge">Gauge</label>
       </div>
 
+    <div id='bottomSection'>
       <div id='stats'>
         <span>{{this.Stats[0] | number}}</span>
         <span>{{this.Stats[1] | number}}</span>
@@ -34,6 +43,8 @@
         <span>{{this.Stats[3] | number}}</span>
         <span>{{this.Stats[4] | number}}</span>
       </div>
+
     </div>
+
 
 </div>

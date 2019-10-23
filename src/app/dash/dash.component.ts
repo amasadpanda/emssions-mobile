@@ -49,7 +49,7 @@ export class DashComponent implements OnInit {
   line() {
    var options = {
       chart: {
-        height: this.height/2
+        height: this.height/2.5,
         type: 
           'line',
           sparkline: {
@@ -295,5 +295,15 @@ export class DashComponent implements OnInit {
     );
 
     chart.render();
+  }
+
+  showStat() {
+    document.getElementById('gauges').style.visibility = 'hidden';
+    document.getElementById('chart').style.visibility = 'visible';
+  }
+
+  showGauge() {
+    document.getElementById('chart').style.visibility = 'hidden';
+    document.getElementById('gauges').style.visibility = 'visible';
   }
 }

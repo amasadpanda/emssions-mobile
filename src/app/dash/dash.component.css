@@ -11,6 +11,14 @@
   right: 0;
   margin: auto;
 
+  position: absolute;
+
+}
+
+#chartSection {
+  position: relative;
+  height: 42vh;
+  width: 100vw;
 }
 
 #chartBar {
@@ -26,14 +34,22 @@
 }
 
 #gauges {
-  left: 0;
-  width: 40%;
+  visibility: hidden;
+
+  position: absolute;
 }
 
 #bottomSection {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+#carasol {
+  font-size: 4vh;
+  position: fixed;
+  top: 2vh;
+  right: 5vw;
 }
 
 #stats {
@@ -67,3 +83,5 @@ input[type="radio"]:checked+label {
   padding: 0;
   color: #25283d;
 }
+
+
