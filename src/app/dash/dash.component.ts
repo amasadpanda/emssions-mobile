@@ -49,10 +49,11 @@ export class DashComponent implements OnInit {
   line() {
    var options = {
       chart: {
+        height: this.height/2
         type: 
           'line',
           sparkline: {
-            enabled: true,
+            enabled: false,
           },
       },
        animations: {
@@ -72,6 +73,26 @@ export class DashComponent implements OnInit {
         colors: undefined,
         width: this.width/200,
         dashArray: 0,      
+      },
+      xaxis: {
+        type: 'datetime',
+        labels: {
+          style: {
+            colors: 'white',
+            fontSize: '2vw',
+          },
+        },
+        tooltip: {
+          enabled: false,
+        }
+      },
+      yaxis: {
+        labels: {
+          style: {
+            color: 'white',
+            fontSize: '2vh',
+          }
+        }
       },
       tooltip: {
           enabled: true,
@@ -107,10 +128,6 @@ export class DashComponent implements OnInit {
               offsetY: 0,
           },
       },
-      xaxis: {
-        type: 'datetime',
-      },
-
     }
     var chart = new ApexCharts(document.querySelector("#chart"), options);
     chart.render();
