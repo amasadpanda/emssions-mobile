@@ -66,7 +66,7 @@ export class StatsComponent implements OnInit {
           type: ''
         }, 
       },
-      colors: ['#de3c4b', '#abe188', '#fff'],
+      colors: ['#de3c4b', '#abe188'],
       series: [
         {
           name: 'Above',
