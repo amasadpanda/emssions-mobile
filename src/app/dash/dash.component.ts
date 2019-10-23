@@ -208,6 +208,60 @@ export class DashComponent implements OnInit {
   }
 
   gauges() {
+            var options = {
+            chart: {
+                type: 'radialBar',
+                offsetY: -10
+            },
+            plotOptions: {
+                radialBar: {
+                    startAngle: -135,
+                    endAngle: 135,
+                    dataLabels: {
+                        name: {
+                            fontSize: '2vh',
+                            color: undefined,
+                            offsetY: 120
+                        },
+                        value: {
+                            offsetY: 0,
+                            fontSize: '7vh',
+                            color: 'white',
+                            formatter: function (val) {
+                                return val + "%";
+                            }
+                        }
+                    }
+                }
+            },
+            fill: {
+                type: 'gradient',
+                gradient: {
+                    shade: 'dark',
+                    shadeIntensity: 0.15,
+                    inverseColors: false,
+                    opacityFrom: 1,
+                    opacityTo: 1,
+                    stops: [0, 50, 65, 91]
+                },
+            },
+            stroke: {
+                dashArray: 4
+            },
+            series: [67],
+            labels: ['CO2 Limit'],
+            
+        }
+
+        var chart = new ApexCharts(
+            document.querySelector("#gauges"),
+            options
+        );
+        
+        chart.render();
+  }
+
+  gauges1() {
     var options = {
       chart: {
         type: 'radialBar',
