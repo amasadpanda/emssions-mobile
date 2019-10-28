@@ -61,19 +61,31 @@
   flex-wrap: wrap;
 }
 
-#stats span {
-  font-size: 6vh;
-  color: #5ab1bb;
-  width: 45vw;
-  border: 2px solid red;
-}
-
 #stats div {
   font-size: 2vh;
-  color: #5ab1bb;
-  width: 45vw;
-  border: 2px solid red;
+  width: 55vw;
 }
+
+table {
+  color: #5ab1bb;
+}
+
+table td {
+  font-size: 8vw;
+  width: 50vw;
+  
+}
+
+table td {
+  border-bottom:3px solid white;
+}
+
+
+table tr td:nth-child(2) {
+  text-align: center;
+}
+
+
 
 input[type="radio"] {
     display: none;

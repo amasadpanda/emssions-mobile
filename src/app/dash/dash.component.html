@@ -37,13 +37,29 @@
 
     <div id='bottomSection'>
       <div id='stats'>
-        <><div>Ambient Temp</div><span>{{this.Stats[0] | number}}</span>
-        <div>Block Fuel Flow</div><span>{{this.Stats[1] | number}}</span>
-        <div>Power</div><span>{{this.Stats[2] | number}}</span>
-        <div>Temp</div><span>{{this.Stats[3] | number}}</span>
-        <div>Degrad</div><span>{{this.Stats[4] | number}}</span>
+        <table>
+          <tr>
+            <td>Ambient Temp</td>
+            <td>{{this.Stats[0] | number}}</td>
+          </tr>
+          <tr>
+            <td>Block Fuel Flow</td>
+            <td>{{this.Stats[1] | number}}</td>
+          </tr>
+          <tr>
+            <td>Power</td>
+            <td>{{this.Stats[2] | number}}</td>
+          </tr>
+          <tr>
+            <td>Temp</td>
+            <td>{{this.Stats[3] | number}}</td>
+          </tr>
+          <tr class='noborder'>
+            <td class='noborder'>Degrad</td>
+            <td class='noborder'>{{this.Stats[4] | number}}</td>
+          </tr>
+        </table>
       </div>
-
     </div>
 
 
